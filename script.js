@@ -1,7 +1,6 @@
-const addForm = document.querySelector('.add');
+const addForm = document.querySelector(".add")
 
- addForm.addEventListener('submit', event => {
-   
-   event.preventDefault();
-   console.og(addForm.task.value);
- })
+addForm.addEventListener("submit", (e)=>{
+  e.preventDefault();
+  console.log(addForm.task.value);
+})
