@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css">
   <title>To do</title>
 </head>
 <body>
@@ -16,9 +16,35 @@
       </section>
       <section class="task">
 
-        <div class="search-box"></div>
-        <div class="task-box"></div>
-        <div class="message"></div>
+        <div class="search-box">
+          <form class="search">
+            <input type="text" name="task" placeholder="search task">
+            <i class="bi bi-x-octagon" class="reset"></i>
+          </form>
+        </div>
+        <div class="task-box">
+          <ul class="tasks">
+          <li>
+            <span>task 1</span>
+            <i class="bi bi-trash "class ="delete"></i>
+            
+            </li>
+          <li>
+          <span>task 2</span>
+          <i class="bi bi-trash "class ="delete"></i></li>
+          <li>
+          <span>task 3</span>
+          <i class="bi bi-trash "class ="delete"></i></li>
+          </ul>
+          <form  class="add">
+            <input type="text" name="ask" placeholder="add task" autocomplete="off">
+            <input type="submit" value="Add">
+          </form>
+        </div>
+        <div class="message">
+          <span>You have 3 pending tasks.</span>
+          <button class= "clear">Clear All</button>
+        </div>
       </section>
     </div>
   </main>
