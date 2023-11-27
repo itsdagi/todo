@@ -45,7 +45,7 @@ clearAll.addEventListener("click", event=>{
 function filterTask(term){
   const list =Array.from(tasks.children)
        .filter(task =>{
-          return !task.textContent.includes(term)
+          return !task.textContent.toLowerCase().includes(term)
   })
   .forEach(task => {
     task.classList.add("hide")
@@ -53,7 +53,7 @@ function filterTask(term){
 
   Array.from(tasks.children)
   .filter(task =>{
-    return task.textContent.includes(term);
+    return task.textContent.toLowerCase().includes(term);
   })
   .forEach(task =>{
     task.classList.remove("hide")
@@ -61,7 +61,7 @@ function filterTask(term){
 }
 
 searchForm.addEventListener("keyup", event=>{
-  const term = searchForm.task.value.trim();
+  const term = searchForm.task.value.trim().toLowerCase();
   filterTask(term);
 })
 
