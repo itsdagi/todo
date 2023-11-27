@@ -2,8 +2,8 @@ const addForm = document.querySelector(".add")
 const tasks = document.querySelector(".tasks")
 const clearAll = document.querySelector(".clear")
 const messageSpan = document.querySelector(".message span")
-
-function updateMessage(){
+const searchMessage = document.querySelector(".search")
+function upadateMessage(){
   const textLength = tasks.children.length;
   messageSpan.textContent=`you have ${textLength} pending messages.`
 } 
@@ -40,4 +40,9 @@ clearAll.addEventListener("click", event=>{
     
   });
   updateMessage();
+})
+
+
+searchForm.addeventListener("keyup", event=>{
+  const term = searchForm.task.value.trim();
 })
