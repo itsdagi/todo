@@ -3,7 +3,8 @@ const tasks = document.querySelector(".tasks")
 const clearAll = document.querySelector(".clear")
 const messageSpan = document.querySelector(".message span")
 const searchMessage = document.querySelector(".search")
-function upadateMessage(){
+const searchForm = document.querySelector(".search")
+function updateMessage(){
   const textLength = tasks.children.length;
   messageSpan.textContent=`you have ${textLength} pending messages.`
 } 
@@ -52,11 +53,11 @@ function filterTask(term){
 
   Array.from(tasks.children)
   .filter(task =>{
-    retrun task.textContent.includes(term);
+    return task.textContent.includes(term);
   })
   .forEach(task =>{
     task.classList.remove("hide")
-  }
+  })
 }
 
 searchForm.addEventListener("keyup", event=>{
