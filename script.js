@@ -41,8 +41,33 @@ clearAll.addEventListener("click", event=>{
   });
   updateMessage();
 })
+function filterTask(term){
+  const list =Array.from(tasks.children)
+       .filter(task =>{
+          return !task.textContent.includes(term)
+  })
+  .forEach(task => {
+    task.classList.add("hide")
+  });
 
+  Array.from(tasks.children)
+  .filter(task =>{
+    retrun task.textContent.includes(term);
+  })
+  .forEach(task =>{
+    task.classList.remove("hide")
+  }
+}
 
-searchForm.addeventListener("keyup", event=>{
+searchForm.addEventListener("keyup", event=>{
   const term = searchForm.task.value.trim();
+  filterTask(term);
+})
+
+searchForm.addEventListener("click", event=>{
+  if(event.target.classList.contains("reset")){
+    searchForm.reset();
+    const term = searchForm.task.value.trim();
+    filterTask(term);
+  }
 })
